@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 6f; // use _name for private variables
+    private float _speed = 6f;
 
     [SerializeField]
-    private float _speedMultiplier = 2f;
+    private float _speedMultiplier = 1.5f;
 
     [SerializeField]
     private GameObject _laser;
@@ -40,9 +40,6 @@ public class Player : MonoBehaviour
     private int _score;
 
     private UIManager _uiManager;
-
-    [SerializeField]
-    private GameObject _rightEngine, _leftEngine;
 
     // Start is called before the first frame update
     void Start()
@@ -133,7 +130,7 @@ public class Player : MonoBehaviour
         else
         {
             //takes position of player and adds (0,0.8f,0) so the laser comes out from the front
-            Instantiate(_laser, transform.position + new Vector3(0,1f,0), Quaternion.identity);
+            Instantiate(_laser, transform.position + new Vector3(0,1.5f,0), Quaternion.identity);
         }
         
 
@@ -150,16 +147,6 @@ public class Player : MonoBehaviour
 
         _lives -= 1;
         _uiManager.UpdateLives(_lives);
-
-        if(_lives == 2)
-        {
-            _rightEngine.SetActive(true);
-        }
-        else if(_lives == 1)
-        {
-            _leftEngine.SetActive(true);
-        }
-        Debug.Log(_lives);
 
         if(_lives < 1)
         {

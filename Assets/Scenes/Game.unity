@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125631984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -3.41, z: 0}
+  m_LocalPosition: {x: 0.04, y: -2.4, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 656029947}
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060299ba5daeb814bafb70991120c6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _speedMultiplier: 2
+  _speed: 6
+  _speedMultiplier: 1.5
   _laser: {fileID: 8472454406678305155, guid: a60bf90caa631544c9ad898df2e83777, type: 3}
   _tripleShotPrefab: {fileID: 3613423111524346936, guid: 46f1fa03362039b4ab3b6588596a16ac,
     type: 3}
@@ -257,8 +257,6 @@ MonoBehaviour:
   _isShieldActive: 0
   _shieldVisualizer: {fileID: 656029946}
   _score: 0
-  _rightEngine: {fileID: 0}
-  _leftEngine: {fileID: 0}
 --- !u!61 &125631988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -997,7 +995,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.0536668, g: 0.054808963, b: 0.05660379, a: 0}
+  m_BackGroundColor: {r: 0.13105199, g: 0.1792453, b: 0.16318086, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1153,7 +1151,7 @@ SpriteRenderer:
   m_SortingLayerID: -1737137045
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 351f30ffb741fd643b82bde90a222699, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e92f4046772db8847968c024386acd8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
