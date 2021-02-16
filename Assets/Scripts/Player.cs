@@ -62,8 +62,6 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("The UIManager is null");
         }
-
-        Debug.Log("This is a test");
     }
 
     // Update is called once per frame
@@ -109,7 +107,7 @@ public class Player : MonoBehaviour
         // }
         
         //Mathf.clamp(the value we wish to restrict, min value, max value)
-        transform.position  =   new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0),0);
+        transform.position  =   new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.41f, 0),0);
 
 
         //if the player position on the x axis > 11 or < -11, send to other side

@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     private float _speed = 4f;
 
     private Player _player;
-    Animator _enemyAnimator;
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
@@ -18,11 +17,6 @@ public class Enemy : MonoBehaviour
             Debug.LogError("Player is null");
         }
 
-        _enemyAnimator = gameObject.GetComponent<Animator>();
-        if(_enemyAnimator == null)
-        {
-            Debug.LogError("Animator is null");
-        }
     }
 
     // Update is called once per frame
@@ -50,11 +44,8 @@ public class Enemy : MonoBehaviour
             {
                 _player.AddScore(10);
             }
-            _enemyAnimator.SetTrigger("OnEnemyDeath");
-            _speed = 2f;
-            gameObject.GetComponent<Collider2D>().enabled = false;
             //Destroy enemy
-            Destroy(this.gameObject, 2.633f);
+            Destroy(this.gameObject);
         }
         if(other.tag == "Player")
         {
@@ -65,11 +56,8 @@ public class Enemy : MonoBehaviour
             {
                 player.Damage();
             }
-            _enemyAnimator.SetTrigger("OnEnemyDeath");
-            _speed = 2f;
-            gameObject.GetComponent<Collider2D>().enabled = false;
             //Damage the player
-            Destroy(this.gameObject,2.633f);
+            Destroy(this.gameObject);
         }
     }
 }
