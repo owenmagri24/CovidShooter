@@ -37,6 +37,12 @@ public class Player : MonoBehaviour
     private GameObject _shieldVisualizer;
 
     [SerializeField]
+    private GameObject _playerTripleShotLeft;
+
+    [SerializeField]
+    private GameObject _playerTripleShotRight;
+
+    [SerializeField]
     private int _score;
 
     private UIManager _uiManager;
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour
     void Update()
     {   
         CalculateMovement();
+        PlayerActiveTripleShot();
 
         //Calls method when space is pressed && Time.time > _canfire
         if(Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire)
@@ -132,8 +139,19 @@ public class Player : MonoBehaviour
             //takes position of player and adds (0,0.8f,0) so the laser comes out from the front
             Instantiate(_laser, transform.position + new Vector3(0,1.5f,0), Quaternion.identity);
         }
-        
+    }
 
+    void PlayerActiveTripleShot()
+    {
+        if(_isTripleShotActive == true)
+        {
+            _playerTripleShotLeft.SetActive(true);
+            _playerTripleShotRight.SetActive(true);
+        }
+        else{
+            _playerTripleShotLeft.SetActive(false);
+            _playerTripleShotRight.SetActive(false);
+        }
     }
 
     public void Damage()
